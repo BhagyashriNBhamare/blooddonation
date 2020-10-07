@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+/*body {
+  background-image: url('images/bank.jpg');
+  background-position: right top;
+  background-repeat: no-repeat;
+  height:40%;
+  width: 100%;
+}
+*/
+
+
+/* make the table a 100% wide by default */
+table {
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 800px) {
+  table {
+  width: 90%;}
+}
+
+/* if the browser window is at least 1000px-s wide: */
+@media screen and (min-width: 1000px) {
+  table {
+  width: 80%;}
+}
+}
+
+</style>
+<script >
+  function myFunction() {
+  document.getElementById("requ").value ="1";
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <a src=""></a>
+    <div class="container p-5">
+      <!-- <a><img src="images/bank.jpg" width="100" height="200"></a> -->
+        <!-- <h1 class="text-center mb-5 text-uppercase text-muted">medicine bank</h1> -->
+        <div class="row">
+            <div class="col-sm-5 bg-light border rounded py-3">
+                <h2 class="text-center">Donor Bank</h2>
+                <form action="/bank" method="POST">
+                    <div class="form-group">
+                    <label for="blood">Blood Group</label>
+                    <input list="bloods" name="blood" id="blood" required>
+                        <datalist id="bloods">
+                            <option value="A">
+                            <option value="B">
+                            <option value="AB">
+                            <option value="O">
+                        </datalist>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="rh">RH-Factor</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="rh" id="rh" value="0" required>+
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="rh" id="rh" value="1" required>-
+                        </label>
+                    </div><br>
+                    <div class="form-group">
+                      <label for="city">City</label>
+                      <input type="text" name="city" id="city" class="form-control" placeholder="city" >
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <label class="radio-inline">
+                        <input type="radio" name="gender" id="gender" value="0">Male
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="gender" id="gender" value="1">Female
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="gender" id="gender" value="2">Others
+                        </label>
+                    </div><br>
+
+
+                    <button type="reset" class="btn btn-primary">RESET</button>
+                    <button type="submit" class="btn btn-primary" >SEARCH</button>
+                    <button type="submit" formaction="/acc" class="btn btn-primary" value="0" name="requ" id="requ">REQUEST ALL</button>
+
+                </form>
+                <br><br>
+                <form>
+                <button type="submit" formaction="/" class="btn btn-primary">LOGOUT
+                  </form>
+                </div>
+          </div>
+        </div>
+      <% if (locals.err) {%>
+      <centre><h1 align="center">Donors</centre>
+        <!-- <h1><%= data[0].email %></h1> -->
+      <table style="max-width:100%" border="2px solid black" align="center">
+      <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>City</th>
+      <th>Contact</th>
+      <th>email</th>
+      <th>Request</th>
+      </tr>
+       <%  data.forEach(function(d){%>
+        <tr>
+            <td><%=d.fname %></td>
+            <td><%=d.lname %></td>
+            <td><%=d.city %></td>
+            <td><%=d.phoneno %></td>
+            <th><%=d.email %></th>
+
+            <td>
+                  <form method="post" action="/delete/<%= d.id %>">
+                    <button type="submit" name="delete" class="btn btn-outline-danger">Request</button>
+                  </form>
+            </td>
+        </tr>
+
+        <%  }); %>
+      </table>
+              <form method="get" action="/bank">
+                    <button type="submit" name="delete" class="btn btn-outline-danger">CLEAR</button>
+              </form>
+             <% } %>
+
+
+    <% if (locals.corr) { %>
+        <h2>Currently donor is unavailable</h2>
+      <% }  %>
+ <% if (locals.t) { %>
+        <h2>Rquest sent sucsessfully. </h2>
+      <% }  %>
+
+
+
+  </body>
+</html>

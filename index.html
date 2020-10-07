@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/index.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+</head>
+
+<body>
+    <section class="sec1">
+        <header>
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" alt="Logo" height=80% width=85px>
+            </a>
+            <div class="menu-toggle"></div>
+            <nav>
+                <ul>
+                    <h2>HELPIFY</h2>
+                    <li> <a href ='/admin'> Admin </a> </li>
+                    <li> <a href ='/donate' >Blood Donation</a> </li>
+                </ul>
+            </nav>
+            <div class="clearfix"></div>
+        </header>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.menu-toggle').click(function(){
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+        </script>
+        <h4 style="font-size: 30px;">Acknowledgement</h4>
+
+        <p class="ack">In this new edition of the guidlines for medical donations we would like to thank all our past contributers.For the 
+        update we particularly acknowledge the input from the members of the Interagacy Pharmaceutical Coordination Group who did the first draft upate of the text, consultants for WHO, Lisa bero who assisted with the systematic review of the experience of blood donations over the past ten years since the previous edition and all others who provided comments.</p><br>
+
+        <p class= "ack" style="font-size: 20px;"><b>Guidelines for blood donations is based on four core principles that form the basis of good medicine donation practice, namely:</b></p>	
+        
+        <div class = "POINTS">
+            <ol class="points">
+                <li><b>The donor must be fit and healthy, and should not be suffering from transmittable diseases.</b></li>
+                <li><b>Age and weight- The donor must be 18–65 years old and should weigh a minimum of 50 kg.</b></li>
+                <li><b>Pulse rate- Between 50 and 100 without irregularities.</b></li>
+                <li><b>Hemoglobin level- A minimum of 12.5 g/dL.</b></li>
+            </ol>
+        </div>
+
+        <div class="one">
+            <a href="guidlines.pdf" download target="_blank"> 
+                <img class="one1" src="/images/five.jpeg"alt="Guidelines for medicine donations">
+            </a>
+        </div>    
+    </section>
+
+        <section class="sec2">
+            <div class="second">
+                <h4 class="abt">
+                    <i class="fa fa-user" aria-hidden="true"></i>About Us
+                </h4>
+                <p>A voluntureed group of people working for a good cause</p>
+                <p>We take utmost precautions with your data</p> 
+                <p>we never share your information. We also do not store any sensitive information like your credit card or bank details.</p>
+                <h4 class="abt">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    Contact us 
+                </h4>
+                9874856515
+            </div>
+        </section>
+
+    <script src="index.js"></script>
+ 
+</body>
+</html>
